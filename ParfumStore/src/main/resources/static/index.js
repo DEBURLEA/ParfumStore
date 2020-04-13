@@ -5,6 +5,7 @@ const API_URL = "http://localhost:8080/api";
 ***Event-Handler Registrierung zum Anlegen eines neuen Parfums.
 */
 window.addEventListener("load", async()=>{
+    //Parfums abrufen + anzeigen
     let hersteller = await fetch(API_URL);
     hersteller= await hersteller.json();
 })
