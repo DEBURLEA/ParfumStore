@@ -43,6 +43,23 @@ public class Hersteller implements Serializable{
 
     //Standard-Konstruktor
     public Hersteller() {
+    }
 
+    private static final List<Hersteller> HERSTELLER_LIST = new ArrayList<>();
+
+    /**
+     * Hinzufügen eines neuen Eintrags
+     * @param hersteller Zu speichernder Eintrag
+     */
+    public void addHersteller(Hersteller hersteller) {
+        HERSTELLER_LIST.add(hersteller);
+    }
+
+    /**
+     * Auslesen einer Liste aller Hersteller
+     * @return Liste aller gespeicherten Hersteller
+     */
+    public List<Hersteller> getHersteller() {
+        return HERSTELLER_LIST;
     }
 }
