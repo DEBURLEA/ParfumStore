@@ -1,4 +1,4 @@
-const API_URL = "localhost:8080/api";
+const API_URL = "http://localhost:8080/api";
 
 /**
  * Daten nach dem Laden der Seite vom Server abrufen und anzeigen. Ebenso
@@ -23,7 +23,7 @@ window.addEventListener("load", async () => {
     //Event Listener addHersteller
     buttonAddHerstellerElement.addEventListener("click", e =>{
         showElements ();
-        console.log("addHerseller geklickt");
+        console.log("addHersteller geklickt");
     });
 });
 
@@ -39,16 +39,15 @@ async function getEntries(HerstellerName) {
 }
 
 function displayHersteller(hersteller){
-    let herstellerDiv = document.getElementById("hersteller");
     let label = document.createTextNode(hersteller.name);
-    herstellerDiv.appendChild(label);
+    label.appendChild(label);
 }
 
 async function showElements(){
-
-    let name = formElement.name.value;
+    let input = document.getElementById("input-name");
+    let name = input.value;
     if(name.trim() == "") return;
-    formElement.name.value = "";
+    input.value = "";
 
     let entry = await fetch(API_URL, {
         method: "POST",
